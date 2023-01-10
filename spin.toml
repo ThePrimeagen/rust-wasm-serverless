@@ -1,0 +1,22 @@
+spin_version = "1"
+authors = ["mpaulson <the.primeagen@gmail.com>"]
+description = "aoeu"
+name = "servernone"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "servernone"
+source = "target/wasm32-wasi/release/servernone_route.wasm"
+[component.trigger]
+route = "/"
+[component.build]
+command = "cargo build --target wasm32-wasi --release --package servernone_route"
+
+[[component]]
+id = "rust_me_daddy"
+source = "target/wasm32-wasi/release/other_file.wasm"
+[component.trigger]
+route = "/rust_me_daddy"
+[component.build]
+command = "cargo build --target wasm32-wasi --release --package other_file"

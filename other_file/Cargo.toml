@@ -1,0 +1,18 @@
+[package]
+name = "other_file"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = [ "cdylib" ]
+
+[dependencies]
+anyhow.workspace = true
+bytes.workspace = true
+http.workspace = true
+leptos = { version = "0.0.22", features = ["ssr"] }
+spin-sdk.workspace = true
+wit-bindgen-rust.workspace = true
+
